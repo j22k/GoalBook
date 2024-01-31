@@ -10,21 +10,21 @@ function App() {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSignin = async (e) => {
-    console.log(username, password);
-    console.log(`Login attempt with username: ${username} and password: ${password}`);
     e.preventDefault();
     try {
       const response = await axios.post(route.signIn, {
         username,
         password,
       });
+      console.log("client : ",response);
       if (response.status === 200) {
         const token = response.data.token;
-        localStorage.setItem('token', token); 
+        localStorage.setItem('token', token);
         //await navigate('/Card');
       }
-      else{
-        setErrorMessage(response.data)
+      if(response.status === 201) {
+        console.log(response);
+        setErrorMessage(response.data.message)
       }
     } catch (error) {
       if (error.response && error.response.status === 201) {
@@ -32,7 +32,7 @@ function App() {
       } else {
         setErrorMessage('An error occurred');
       }
-  }
+    }
   };
 
   return (
@@ -40,6 +40,7 @@ function App() {
       <form className="Auth-form" onSubmit={handleSignin}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign In</h3>
+          {errorMessage && <div className="alert alert-danger custom-error">{errorMessage}</div>}
           <div className="form-group mt-3">
             <label>User ID</label>
             <input
@@ -65,7 +66,8 @@ function App() {
               Submit
             </button>
           </div>
-          <p className="forgot-password text-right mt-2">{/* Forgot <a href="#">password?</a> */}</p>
+          <p className="forgot-password text-right mt-2">
+            {/* Forgot <a href="#">password?</a> */}</p>
         </div>
       </form>
     </div>
