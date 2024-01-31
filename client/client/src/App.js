@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Make sure to import useNavigate if you are using it with React Router
+import axios from 'axios';// Make sure to import useNavigate if you are using it with React Router
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import route from './apis/routes'
 
 function App() {
   const [username, setUserID] = useState();
@@ -11,6 +12,27 @@ function App() {
   const handleSignin = async (e) => {
     console.log(username, password);
     console.log(`Login attempt with username: ${username} and password: ${password}`);
+    e.preventDefault();
+    try {
+      const response = await axios.post(route.signIn, {
+        username,
+        password,
+      });
+      if (response.status === 200) {
+        const token = response.data.token;
+        localStorage.setItem('token', token); 
+        //await navigate('/Card');
+      }
+      else{
+        setErrorMessage(response.data)
+      }
+    } catch (error) {
+      if (error.response && error.response.status === 201) {
+        setErrorMessage('User already registered');
+      } else {
+        setErrorMessage('An error occurred');
+      }
+  }
   };
 
   return (
