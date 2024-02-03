@@ -4,7 +4,8 @@ const PORT = process.env.PORT || 5000;
 const db = require('./config/connection');
 const cors = require('cors');
 const userRouter = require('./routes/user');
-const userHelpers = require('./helpers/superAdmin')
+const superRouter = require('./routes/super')
+const userHelpers = require('./helpers/superHelpers')
 app.use(express.json());
 
 // Use CORS middleware before defining routes
@@ -16,6 +17,7 @@ app.use(cors({
 
 // Use the userRouter for the '/user' route
 app.use('/user', userRouter);
+app.use('/super', superRouter);
 
 // Start the server
 app.listen(PORT, async () => {
