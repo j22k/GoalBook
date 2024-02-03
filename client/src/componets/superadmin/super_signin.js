@@ -3,8 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../style/signin.css";
 import endpoint from "../../apis/endpoint";
 import axios from 'axios';
+import {useNavigate } from 'react-router-dom';
 
 export default function SuperSignIn() {
+  const navigate = useNavigate();
     const [username, setUserID] = useState();
     const [password, setPassword] = useState();
     const [errorMessage, setErrorMessage] = useState('');
@@ -20,7 +22,7 @@ export default function SuperSignIn() {
         if (response.status === 200) {
           const token = response.data.token;
           localStorage.setItem('token', token);
-          //await navigate('/Card');
+          await navigate('/super_home');
         }
         if(response.status === 201) {
           console.log(response);

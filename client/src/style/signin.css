@@ -45,7 +45,22 @@
     border-radius: 8px;
     background-color: gray;
   }
-  
+  .view-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0c0c0c;
+  }
+  .view-admin-container {
+    width: 800px;
+    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    background-color: gray;
+  }
   .Auth-form-content {
     padding-left: 12%;
     padding-right: 12%;
