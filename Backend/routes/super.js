@@ -34,4 +34,16 @@ router.post('/add_admin',async (req,res)=>{
   }
 }),
 
+router.get('/fetch_admins',async (req,res)=>{
+  console.log("server 1 : ",req.body);
+  result = await superHelpers.getAllAdmins()
+  console.log("Server 2",result);
+  if(result.status){
+    res.status(200).json({message : "succesfull",admins :result.admins});
+  }
+  else{
+    res.status(201).json({ error: 'Unauthorized', message: result.message });
+  }
+}),
+
   module.exports = router;

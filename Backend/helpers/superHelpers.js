@@ -61,4 +61,14 @@ module.exports = {
       return { status: false, message: error }
     }
   },
+  getAllAdmins: async () => {
+    try {
+      const admins = await db.getDatabase().collection(collections.ADMIN).find({}).toArray();
+      console.log(admins);
+      return { status: true, message: 'Admins retrieved successfully', admins };
+    } catch (error) {
+      console.log(error);
+      return { status: false, message: error };
+    }
+  }
 }

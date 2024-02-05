@@ -1,7 +1,7 @@
 // App.js
 import React, { useState } from 'react';
-import Nav from "./nav";
-import AddNewAdmin from './addadmin';
+import Nav from "./nav.js";
+import AddNewAdmin from './addadmin.js';
 import ViewAdmin from './viewadmin.jsx';
 
 const Home = () => {

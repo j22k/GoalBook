@@ -5,7 +5,7 @@ const endpoint = {
   superSignin: `${nodeserver}/super/signin`,
   signIn: `${nodeserver}/user/signin`,
   addAdmin : `${nodeserver}/super/add_admin`,
-  fetchStory : `${nodeserver}/user/fetchstory`
+  fetchAdmins : `${nodeserver}/super/fetch_admins`
   // ...other endpoints
 };
 
