@@ -4,7 +4,7 @@ const endpoint = {
   // Define your API endpoints here
   superSignin: `${nodeserver}/super/signin`,
   signIn: `${nodeserver}/user/signin`,
-  writeSubmit : `${nodeserver}/user/write`,
+  addAdmin : `${nodeserver}/super/add_admin`,
   fetchStory : `${nodeserver}/user/fetchstory`
   // ...other endpoints
 };

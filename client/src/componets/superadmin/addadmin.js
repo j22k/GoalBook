@@ -5,7 +5,7 @@ import endpoint from "../../apis/endpoint";
 import axios from 'axios';
 
 export default function AddNewAdmin() {
-    const [username, setUserID] = useState();
+    const [userid, setUserID] = useState();
     const [password, setPassword] = useState();
     const [name, setName] = useState();
     const [email, setEmail] = useState();
@@ -14,28 +14,31 @@ export default function AddNewAdmin() {
   
     const handleSignin = async (e) => {
       e.preventDefault();
-    //   try {
-    //     const response = await axios.post(endpoint.superSignin, {
-    //       username,
-    //       password,
-    //     });
-    //     console.log("client : ",response);
-    //     if (response.status === 200) {
-    //       const token = response.data.token;
-    //       localStorage.setItem('token', token);
-    //       await navigate('/super_home');
-    //     }
-    //     if(response.status === 201) {
-    //       console.log(response);
-    //       setErrorMessage(response.data.message)
-    //     }
-    //   } catch (error) {
-    //     if (error.response && error.response.status === 201) {
-    //       setErrorMessage('User already registered');
-    //     } else {
-    //       setErrorMessage('An error occurred');
-    //     }
-    // }
+      try {
+        const response = await axios.post(endpoint.addAdmin, {
+          userid,
+          password,
+          name,
+          email,
+          phonenumber
+        });
+        console.log("client : ",response);
+        if (response.status === 200) {
+          const token = response.data.token;
+          localStorage.setItem('token', token);
+          await alert(response.data.message)
+        }
+        if(response.status === 201) {
+          console.log(response);
+          setErrorMessage(response.data.message)
+        }
+      } catch (error) {
+        if (error.response && error.response.status === 201) {
+          setErrorMessage('User already registered');
+        } else {
+          setErrorMessage('An error occurred');
+        }
+    }
     };
  
  // This following section will display the form that takes the input from the user.

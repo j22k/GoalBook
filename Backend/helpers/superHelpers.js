@@ -43,4 +43,22 @@ module.exports = {
       return { status: false, message: error };
     }
   },
+  CreateAdmin: async (data) => {
+    try {
+      var user = await db.getDatabase().collection(collections.ADMIN).findOne({ userid: data.userid });
+      if (user) {
+        return { status: false, message: 'admin already registerd' };
+      } else {
+        const salt = await bcrypt.genSalt(10);
+        const hashpass = await bcrypt.hash(data.password, salt);
+        data.password = hashpass;
+
+        var user = await db.getDatabase().collection(collections.ADMIN).insertOne(data);
+        return { status: true, message: 'admin registerd', user }
+      }
+    } catch (error) {
+      console.log(error);
+      return { status: false, message: error }
+    }
+  },
 }
