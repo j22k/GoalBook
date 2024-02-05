@@ -3,10 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../style/signin.css";
 import endpoint from "../../apis/endpoint";
 import axios from 'axios';
-import {useNavigate } from 'react-router-dom';
 
 export default function AddNewAdmin() {
-  const navigate = useNavigate();
     const [username, setUserID] = useState();
     const [password, setPassword] = useState();
     const [name, setName] = useState();

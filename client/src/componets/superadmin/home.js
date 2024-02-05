@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Nav from "./nav";
 import AddNewAdmin from './addadmin';
-import ViewAdmin from './viewadmin';
+import ViewAdmin from './viewadmin.jsx';
 
 const Home = () => {
   const [selectedComponent, setSelectedComponent] = useState('add-new-admin');
