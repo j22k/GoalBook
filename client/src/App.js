@@ -3,6 +3,7 @@ import './App.css';
 import SignIn from "./componets/signin"
 import SuperSignIn from './componets/superadmin/super_signin';
 import SuperHome from "./componets/superadmin/home"
+import AdminHome from "./componets/admin/home"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<SignIn />} />
         <Route path="/super" element={<SuperSignIn />} />
         <Route path="/super_home" element={<SuperHome />} />
+        <Route path="/admin_home" element={<AdminHome />} />
       </Routes>
     </Router>
   );

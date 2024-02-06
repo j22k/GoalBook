@@ -6,14 +6,15 @@ import axios from "axios";
 import endpoint from "../../apis/endpoint";
 // import { Password } from 'primereact/password';
 
-const ViewAdmin = () => {
+const ViewEmployee = () => {
   const [admins, setAdmins] = useState([]);
 
   useEffect(() => {
     const fetchAdmins = async () => {
       try {
-        const response = await axios.get(endpoint.fetchAdmins);
-        setAdmins(response.data.admins);
+        const response = await axios.get(endpoint.fetchEmployee);
+        console.log(response);
+        setAdmins(response.data.employee);
       } catch (error) {
         console.log(error);
       }
@@ -43,8 +44,8 @@ const ViewAdmin = () => {
         width: 200
       },
       {
-        label: 'User ID',
-        field: 'userid',
+        label: 'employee ID',
+        field: 'employeeid',
         sort: 'asc',
         width: 100
       },
@@ -53,7 +54,7 @@ const ViewAdmin = () => {
       name: admin.name,
       phonenumber: admin.phonenumber,
       email: admin.email,
-      userid: admin.userid,
+      employeeid: admin.employeeid,
     })),
   };
 
@@ -71,4 +72,4 @@ const ViewAdmin = () => {
   );
 }
 
-export default ViewAdmin;
+export default ViewEmployee;

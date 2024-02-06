@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 module.exports = {
   SignIn: async (userData) => {
     try {
-      const user = await db.getDatabase().collection(collections.USER).findOne({ userid: userData.userID });
+      const user = await db.getDatabase().collection(collections.ADMIN).findOne({ userid: userData.userID });
 
       if (!user) {
         return { status: false, message: 'Invalid username ' };

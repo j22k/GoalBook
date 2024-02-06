@@ -1,5 +1,5 @@
 module.exports={
-    USER:'user',
     SUPERADMIN : 'superadmin',
-    ADMIN : 'admin'
+    ADMIN : 'admin',
+    EMPLOYEE : 'employee'
 }

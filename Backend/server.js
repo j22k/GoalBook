@@ -5,6 +5,7 @@ const db = require('./config/connection');
 const cors = require('cors');
 const userRouter = require('./routes/user');
 const superRouter = require('./routes/super')
+const adminRouter = require('./routes/admin')
 const userHelpers = require('./helpers/superHelpers')
 app.use(express.json());
 
@@ -18,6 +19,7 @@ app.use(cors({
 // Use the userRouter for the '/user' route
 app.use('/user', userRouter);
 app.use('/super', superRouter);
+app.use('/admin', adminRouter);
 
 // Start the server
 app.listen(PORT, async () => {

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const userHelpers = require('../helpers/userHelpers')
 const jwt = require('jsonwebtoken');
+const {jwtSecret} = require('../config/jwt')
 
 router.post('/signin',async (req,res)=>{
     console.log("server 1 : ",req.body);
