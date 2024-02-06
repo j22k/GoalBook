@@ -4,6 +4,7 @@ import "../style/signin.css";
 import endpoint from "../apis/endpoint";
 import axios from 'axios';
 import {useNavigate } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode';
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -22,7 +23,12 @@ export default function SignIn() {
         if (response.status === 200) {
           const token = response.data.token;
           localStorage.setItem('token', token);
+          const decodedToken = jwtDecode(token);
+          if (decodedToken.authourozation === "employee") {
+            await navigate('/employee_home');
+          } else {
           await navigate('/admin_home');
+          }
         }
         if(response.status === 201) {
           console.log(response);

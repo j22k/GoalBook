@@ -14,8 +14,6 @@ app.use(cors({
   origin: 'http://localhost:3000',
 }));
 
-
-
 // Use the userRouter for the '/user' route
 app.use('/user', userRouter);
 app.use('/super', superRouter);
