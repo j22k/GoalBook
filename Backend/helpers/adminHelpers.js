@@ -31,5 +31,19 @@ CreateEmployee: async (data) => {
       console.log(error);
       return { status: false, message: error };
     }
-  }
+  },
+  AddBookings: async (data) => {
+    try {
+      var user = await db.getDatabase().collection(collections.BOOKINGS).findOne({ bookingdate: data.bookingdate,time :data.time  });
+      if (user) {
+        return { status: false, message: 'Booking already registerd' };
+      } else {
+        var user = await db.getDatabase().collection(collections.BOOKINGS).insertOne(data);
+        return { status: true, message: 'Booking registerd', user }
+      }
+    } catch (error) {
+      console.log(error);
+      return { status: false, message: error }
+    }
+  },
 }

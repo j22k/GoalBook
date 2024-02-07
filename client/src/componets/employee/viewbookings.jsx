@@ -24,13 +24,16 @@ const ViewBookings = () => {
   return (
     <div className="view-booking">
       <div className="view-booking-date">
-      <Form.Control
-                type="date"
-                name="datepic"
-                placeholder="DateRange"
-                value={todayDate}
-                // onChange={(e) => setDate(e.target.value)}
-              />
+      <div className="form-group mt-3">
+          <input
+            type="date"
+            className="form-control mt-1"
+            placeholder="Enter Name"
+            required=""
+            value={todayDate}
+            // onChange={(e) => setName(e.target.value)}
+          />
+        </div>
       </div>
       <div className="view-booking-data">
         <div className="view-booking-card"></div>
