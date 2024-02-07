@@ -1,9 +1,10 @@
 // App.js
 import React, { useState } from 'react';
 import Navi from './nav.js'
+import ViewBookings from './viewbookings.jsx'
 
 const Home = () => {
-  const [selectedComponent, setSelectedComponent] = useState('add-new-employee');
+  const [selectedComponent, setSelectedComponent] = useState('view-bookings');
 
   const handleSelect = (component) => {
     setSelectedComponent(component);
@@ -13,7 +14,8 @@ const Home = () => {
   const renderContent = () => {
     switch (selectedComponent) {
       case 'add-new-employee':
-      case 'view-employee': // Provide the appropriate component or content for 'view-admin'
+      case 'view-bookings':
+        return <ViewBookings /> // Provide the appropriate component or content for 'view-admin'
       default:
         return null;
     }

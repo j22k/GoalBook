@@ -32,7 +32,7 @@ function Navi({ onSelect }) { // Change function name to Nav
           <Navbar.Brand href="/">Navbar</Navbar.Brand> {/* Change href="#home" to href="/" */}
           <Nav className="me-auto">
             <Nav.Link onClick={() => onSelect('add-new-employee')}>Add new employee</Nav.Link>
-            <Nav.Link onClick={() => onSelect('view-employee')}>View employee</Nav.Link>
+            <Nav.Link onClick={() => onSelect('view-bookings')}>View Bookings</Nav.Link>
             <Nav.Link onClick={() => onSelect('Home')}>Pricing</Nav.Link>
           </Nav>
         </Container>

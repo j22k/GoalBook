@@ -1,0 +1,34 @@
+.view-booking {
+    width: 100%;
+    height: 100%;
+    background-color: #0c0c0c;
+  }
+  .view-booking-date {
+    width: 100%;
+    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    background-color: #0c0c0c;
+    justify-content: center;
+    align-items: center;
+  }
+  .view-booking-data {
+    display: flex;
+    flex-direction: column; /* Set flex direction to column */
+    justify-content: flex-start; /* Align items to the start of the container */
+    align-items: center;
+    width: 100%;
+    height: 100vw;
+    background-color: #198754;
+}
+
+.view-booking-card {
+    width: 80%;
+    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    background-color: #212529;
+    margin-top: 2%;
+}
