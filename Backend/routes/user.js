@@ -10,7 +10,7 @@ router.post('/signin',async (req,res)=>{
     if(result.status){
       console.log(result.user);
       console.log(result);
-      const token = jwt.sign({ id: result.user._id,user : result.user.username, authourozation : result.authourozation }, jwtSecret, { expiresIn: '1h' })
+      const token = jwt.sign({ id: result.user._id,user : result.user.username,name : result.user.name,  authourozation : result.authourozation }, jwtSecret, { expiresIn: '1h' })
       console.log(token);
       res.status(200).json({message : "Loged succesfully",token});
     }

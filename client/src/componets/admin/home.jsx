@@ -1,6 +1,6 @@
 // App.js
 import React, { useState } from 'react';
-import Nav from './nav.js'
+import Navi from './nav.js'
 import AddNewEmployee from './addemployee.js';
 import ViewEmployee from './viewemployee.jsx'
 
@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <div>
-      <Nav onSelect={handleSelect} />
+      <Navi onSelect={handleSelect} />
       {renderContent()}
     </div>
   );

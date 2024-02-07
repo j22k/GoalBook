@@ -1,6 +1,6 @@
 // App.js
 import React, { useState } from 'react';
-import Nav from './nav.js'
+import Navi from './nav.js'
 
 const Home = () => {
   const [selectedComponent, setSelectedComponent] = useState('add-new-employee');
@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <div>
-      <Nav onSelect={handleSelect} />
+      <Navi onSelect={handleSelect} />
       {renderContent()}
     </div>
   );

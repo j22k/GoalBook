@@ -23,10 +23,12 @@ export default function SignIn() {
         if (response.status === 200) {
           const token = response.data.token;
           localStorage.setItem('token', token);
-          const decodedToken = jwtDecode(token);
+          var decodedToken = jwtDecode(token);
           if (decodedToken.authourozation === "employee") {
+            decodedToken = '';
             await navigate('/employee_home');
           } else {
+            decodedToken = '';
           await navigate('/admin_home');
           }
         }
