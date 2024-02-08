@@ -40,5 +40,15 @@ router.post('/add_employee',async (req,res)=>{
     else{
       res.status(201).json({ error: 'Unauthorized', message: result.message });
     }
-  })
+  }),
+  
+  router.get('/fetch_booking',async (req,res)=>{
+    result = await adminHelpers.getAllBookings()
+    if(result.status){
+      res.status(200).json({message : "succesfull",Bookings :result.bookings});
+    }
+    else{
+      res.status(201).json({ error: 'Unauthorized', message: result.message });
+    }
+  }),
 module.exports = router;

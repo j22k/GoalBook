@@ -46,4 +46,14 @@ CreateEmployee: async (data) => {
       return { status: false, message: error }
     }
   },
+  getAllBookings: async () => {
+    try {
+      const bookings = await db.getDatabase().collection(collections.BOOKINGS).find({}).toArray();
+      console.log(bookings);
+      return { status: true, message: 'Bookings retrieved successfully', bookings };
+    } catch (error) {
+      console.log(error);
+      return { status: false, message: error };
+    }
+  },
 }

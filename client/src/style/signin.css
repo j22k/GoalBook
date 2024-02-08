@@ -27,16 +27,14 @@
   .App {
     background-color: white;
   }
-  
   .Auth-form-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh; /* Ensure the container takes the full height of the viewport */
     background-color: #0c0c0c;
-  }
-  
+    margin: -50; /* Remove any default margin */
+  }  
   .Auth-form {
     width: 420px;
     box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;

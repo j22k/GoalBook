@@ -2,6 +2,10 @@
     width: 100%;
     height: 100%;
     background-color: #0c0c0c;
+    display: flex;
+    flex-direction: column; /* Set flex direction to column */
+    justify-content: flex-start; /* Align items to the start of the container */
+    align-items: center;
   }
   .view-booking-date {
     width: 100%;
@@ -32,3 +36,4 @@
     background-color: #212529;
     margin-top: 2%;
 }
+

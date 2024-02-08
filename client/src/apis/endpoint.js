@@ -9,6 +9,7 @@ const endpoint = {
   addEmployee : `${nodeserver}/admin/add_employee`,
   fetchEmployee : `${nodeserver}/admin/fetch_employee`,
   addBooking : `${nodeserver}/admin/add_booking`,
+  fetchBooking : `${nodeserver}/admin/fetch_booking`,
   // ...other endpoints
 };
 
